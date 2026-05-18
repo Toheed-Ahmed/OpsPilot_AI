@@ -1,5 +1,31 @@
 # OpsPilot AI - Enterprise Autonomous Multi-Agent Logistics Intelligence System
 
+## README / Documentation
+
+**Overall Design of the Solution:**
+OpsPilot AI is an enterprise-grade autonomous logistics intelligence system. Rather than relying on a monolithic AI model, it distributes complex supply chain decision-making across a 15-stage multi-agent pipeline. This guarantees high precision, logical separation of concerns, and completely traceable logic when dealing with critical enterprise constraints.
+
+**Brief Overview of Architecture:**
+The system is built on a Control-Tower style architecture. It uses the Google Antigravity Multi-Agent Orchestration Engine to sequentially spin up agent personas. Each agent strictly receives and outputs JSON, creating an unbreakable chain of structured data. The architecture allows for dynamic branching, hybrid execution (Active vs. Shadow mode), and autonomous SLA enforcement without human intervention unless specifically escalated.
+
+**Mock / Real APIs Used:**
+- **Mock Operational APIs:** Fleet Navigation API, Billing API, WMS Engine, Customer Service Portal.
+- **Data Ingestion Sources (Mocked JSON):** Weather alerts, fleet telemetry, warehouse status, customer complaints.
+- **Google Antigravity:** Multi-Agent Orchestration Engine.
+
+**Agents Developed:**
+We have developed 14 highly specialized AI Agents, including:
+- *Ingestion & Conflict Detection Agents:* To normalize and verify multi-source data.
+- *Insight, Impact, & Constraint Agents:* For semantic reasoning and financial/SLA impact modeling.
+- *Validation, Decision, & Recommendation Agents:* To enforce logic and build execution blueprints (e.g., using Dialectical Debates).
+- *Execution, Monitoring, Alert, & Rollback Agents:* To fire parallel API payloads, forecast SLA drift, and automatically revert corrupted operations.
+- *Visualization Agent:* Driving the Split-Screen Time Travel Control Tower and Carbon-Arbitrage metrics.
+
+**Integration Implemented:**
+- End-to-end JSON execution trace logging (`execution_trace.json`) that records every agent's decision, terminal logs, and system deltas.
+- Real-time Alert & Action Intelligence System integration.
+- Ready for Flutter UI integration via the Time Travel Control Tower dashboard outputs.
+
 ## System Overview
 OpsPilot AI is a production-ready, multi-agent logistics intelligence system designed to ingest unstructured data, assess real-world business impacts, and autonomously simulate execution steps (like routing updates or pricing changes). It acts as an **Agentic Decision-Making and Risk-Aware Control System**, specifically engineered to handle the complexities of supply chain disruptions without blind automation.
 
