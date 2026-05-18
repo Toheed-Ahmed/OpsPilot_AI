@@ -38,3 +38,16 @@ OUTPUT FORMAT:
     }
   ]
 }
+
+### OPTIONAL EXTENDED OUTPUT
+```json
+{
+  "causal_chain": {
+    "root_cause_id": "",
+    "cause_path": [],
+    "historical_match_score": "",
+    "embedding_reference": "text-embedding-004",
+    "resolved_playbook_id": ""
+  }
+}
+```

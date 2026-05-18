@@ -33,3 +33,20 @@ OUTPUT FORMAT:
     "system_status": ""
   }
 }
+
+### OPTIONAL EXTENDED OUTPUT
+```json
+{
+  "sustainability_metrics": {
+    "carbon_emissions_saved": "",
+    "eco_score": "",
+    "fuel_efficiency_gain": ""
+  },
+  "time_travel_view": {
+    "timeline_index": [],
+    "before_state": {},
+    "after_state": {},
+    "diff_map": {}
+  }
+}
+```

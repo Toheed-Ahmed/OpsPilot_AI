@@ -40,3 +40,22 @@ OUTPUT FORMAT:
     }
   ]
 }
+
+### OPTIONAL EXTENDED OUTPUT
+```json
+{
+  "causal_chain": {
+    "root_cause_id": "",
+    "cause_path": [],
+    "historical_match_score": "",
+    "embedding_reference": "text-embedding-004",
+    "resolved_playbook_id": ""
+  },
+  "sla_escrow": {
+    "vendor_risk_score": "",
+    "penalty_calculation": "",
+    "contract_drift_detected": true,
+    "auto_downgrade_triggered": true
+  }
+}
+```
