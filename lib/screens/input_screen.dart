@@ -81,9 +81,9 @@ class _InputScreenState extends State<InputScreen> {
     } catch (e) {
       debugPrint("Alert validation engine mismatch: $e");
     }
-  } 
+  }
 
-Future<void> _pickFile() async {
+  Future<void> _pickFile() async {
     try {
       FilePickerResult? result = await FilePicker.pickFiles(
         type: FileType.custom,
@@ -94,17 +94,23 @@ Future<void> _pickFile() async {
         setState(() {
           _selectedFileName = result.files.single.name;
           String fn = _selectedFileName!.toLowerCase();
-          
+
           // 🚨 FIX: Purana text delete karne ke bajaye, naya data sath me APPEND (add) karein
           String newTelemetry = "";
-          if (fn.contains('rain') || fn.contains('flood') || fn.contains('weather')) {
-            newTelemetry = " [FILE SYSTEM]: Karachi Weather Alert: Severe rainstorm causing flash floods. Fleet paralyzed in Southern Zone. Logistics nodes failing.";
+          if (fn.contains('rain') ||
+              fn.contains('flood') ||
+              fn.contains('weather')) {
+            newTelemetry =
+                " [FILE SYSTEM]: Karachi Weather Alert: Severe rainstorm causing flash floods. Fleet paralyzed in Southern Zone. Logistics nodes failing.";
           } else if (fn.contains('port') || fn.contains('strike')) {
-            newTelemetry = " [FILE SYSTEM]: Port strike alert: All clearances stalled at primary maritime terminals. Supply chain disruption imminent.";
+            newTelemetry =
+                " [FILE SYSTEM]: Port strike alert: All clearances stalled at primary maritime terminals. Supply chain disruption imminent.";
           } else if (fn.contains('fuel') || fn.contains('price')) {
-            newTelemetry = " [FILE SYSTEM]: Macro-economic shift: Fuel prices spike by 18% nationwide, damaging variable transport margins.";
+            newTelemetry =
+                " [FILE SYSTEM]: Macro-economic shift: Fuel prices spike by 18% nationwide, damaging variable transport margins.";
           } else {
-            newTelemetry = " [FILE SYSTEM]: Ingesting external data report [$_selectedFileName]: High-density network infrastructure anomaly discovered.";
+            newTelemetry =
+                " [FILE SYSTEM]: Ingesting external data report [$_selectedFileName]: High-density network infrastructure anomaly discovered.";
           }
 
           // Agar box pehle se khali nahi hai, toh space de kar aage text jod dein
@@ -175,24 +181,33 @@ Future<void> _pickFile() async {
                         size: 22,
                       ),
                       const SizedBox(width: 14),
+                      const SizedBox(width: 14),
                       Expanded(
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Row(
                               children: [
-                                Text(
-                                  "SYSTEM DISRUPTION ALERT • $_alertLevel",
-                                  style: TextStyle(
-                                    color: _alertLevel == "FAILURE_RECOVERED"
-                                        ? Colors.amberAccent
-                                        : const Color(0xFFF87171),
-                                    fontWeight: FontWeight.w800,
-                                    fontSize: 10,
-                                    letterSpacing: 1.2,
+                                // 🚨 THE CRITICAL FIX: Wrapped the text widget in an Expanded inside the Row!
+                                Expanded(
+                                  child: Text(
+                                    "SYSTEM DISRUPTION ALERT • $_alertLevel",
+                                    style: TextStyle(
+                                      color: _alertLevel == "FAILURE_RECOVERED"
+                                          ? Colors.amberAccent
+                                          : const Color(0xFFF87171),
+                                      fontWeight: FontWeight.w800,
+                                      fontSize: 10,
+                                      letterSpacing: 1.2,
+                                    ),
+                                    softWrap:
+                                        true, // Dynamics automatic text wrapping
                                   ),
                                 ),
-                                const Spacer(),
+
+                                // 🚨 Removed Spacer() because Expanded already pushes the indicator to the end nicely
+                                const SizedBox(width: 8),
+
                                 SizedBox(
                                   width: 8,
                                   height: 8,
@@ -610,10 +625,7 @@ Future<void> _pickFile() async {
       disabledColor: const Color(0xFF030712),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(10),
-        side: BorderSide(
-          color: Colors.white.withOpacity(0.04),
-          width: 1,
-        ),
+        side: BorderSide(color: Colors.white.withOpacity(0.04), width: 1),
       ),
       padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
       onPressed: () => setState(() {

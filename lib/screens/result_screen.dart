@@ -115,7 +115,7 @@ class ResultScreen extends StatelessWidget {
       afterMetrics = [
         "Orchestration State: Halted unsafe route tracking dynamically to preserve logistics safety.",
         "Rollback Parameter: Inverted navigation endpoints back to previous verified checkout parameters.",
-        "Escalation Engine: Transmitted automated emergency notification arrays straight to human operators."
+        "Escalation Engine: Transmitted automated emergency notification arrays straight to human operators.",
       ];
     }
     // 🟢 NOMINAL SCENARIO A: WEATHER OPTIMIZATION
@@ -193,7 +193,10 @@ class ResultScreen extends StatelessWidget {
                 if (!isAutonomousMode) ...[
                   const SizedBox(width: 12),
                   Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 10,
+                      vertical: 5,
+                    ),
                     decoration: BoxDecoration(
                       color: const Color(0xFFD97706).withOpacity(0.15),
                       borderRadius: BorderRadius.circular(8),
@@ -392,12 +395,16 @@ class ResultScreen extends StatelessWidget {
                           children: const [
                             Icon(Icons.verified_rounded, color: Colors.white),
                             SizedBox(width: 12),
-                            Text(
-                              "LEDGER COMMITTED: Manager signature verified successfully!",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 12,
+                            // 🚨 FIXED SNACKBAR POPUP OVERFLOW
+                            Expanded(
+                              child: Text(
+                                "LEDGER COMMITTED: Manager signature verified successfully!",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 11, // Font size tightly bound for clean text wrapping
+                                ),
+                                softWrap: true,
                               ),
                             ),
                           ],
@@ -410,21 +417,27 @@ class ResultScreen extends StatelessWidget {
                     color: Colors.white,
                     size: 18,
                   ),
-                  label: const Text(
-                    "Grant Operational Approval",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 14,
-                      letterSpacing: 0.5,
+                  label: const Expanded(
+                    child: Text(
+                      "Grant Operational Approval",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 13,
+                        letterSpacing: 0.5,
+                      ),
+                      softWrap: true,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
                     ),
                   ),
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFFD97706), // Premium Amber/Orange to match shadow mode
+                    backgroundColor: const Color(0xFFD97706),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(14),
                     ),
                     elevation: 0,
+                    padding: const EdgeInsets.symmetric(horizontal: 16),
                   ),
                 ),
               ),
@@ -484,6 +497,7 @@ class ResultScreen extends StatelessWidget {
             children: [
               Icon(icon, color: iconColor, size: 16),
               const SizedBox(width: 10),
+              // 🚨 FIXED CARD TITLE OVERFLOW ENGINE HERE
               Expanded(
                 child: Text(
                   title,
@@ -493,6 +507,7 @@ class ResultScreen extends StatelessWidget {
                     fontSize: 11,
                     letterSpacing: 1.2,
                   ),
+                  softWrap: true,
                 ),
               ),
             ],
