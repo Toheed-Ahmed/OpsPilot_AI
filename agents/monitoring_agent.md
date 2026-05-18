@@ -34,3 +34,14 @@ OUTPUT FORMAT:
     "monitoring_notes": ""
   }
 }
+
+### OPTIONAL EXTENDED OUTPUT
+```json
+{
+  "sla_forecast": {
+    "breach_prediction_minutes": "",
+    "risk_velocity": "",
+    "confidence_curve": []
+  }
+}
+```

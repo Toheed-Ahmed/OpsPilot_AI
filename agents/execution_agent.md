@@ -28,3 +28,14 @@ OUTPUT FORMAT:
     "execution_status": ""
   }
 }
+
+### OPTIONAL EXTENDED OUTPUT
+```json
+{
+  "execution_tiers": {
+    "current_tier": "T1",
+    "fallback_triggered": false,
+    "sub_agent_spawned": true
+  }
+}
+```

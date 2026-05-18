@@ -39,3 +39,15 @@ OUTPUT FORMAT:
     "blocked_operations": []
   }
 }
+
+### OPTIONAL EXTENDED OUTPUT
+```json
+{
+  "sla_escrow": {
+    "vendor_risk_score": "",
+    "penalty_calculation": "",
+    "contract_drift_detected": true,
+    "auto_downgrade_triggered": true
+  }
+}
+```

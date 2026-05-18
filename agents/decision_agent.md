@@ -38,3 +38,16 @@ OUTPUT FORMAT:
     "risk_score": ""
   }
 }
+
+### OPTIONAL EXTENDED OUTPUT
+```json
+{
+  "debate_ledger": {
+    "optimist_argument": "",
+    "pessimist_argument": "",
+    "final_ruling": "",
+    "sha256_hash": "",
+    "ledger_locked": true
+  }
+}
+```
