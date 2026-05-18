@@ -95,7 +95,7 @@ class _InputScreenState extends State<InputScreen> {
           _selectedFileName = result.files.single.name;
           String fn = _selectedFileName!.toLowerCase();
 
-          // 🚨 FIX: Purana text delete karne ke bajaye, naya data sath me APPEND (add) karein
+         
           String newTelemetry = "";
           if (fn.contains('rain') ||
               fn.contains('flood') ||
@@ -457,26 +457,42 @@ class _InputScreenState extends State<InputScreen> {
               ),
               const SizedBox(height: 14),
 
-              Wrap(
-                spacing: 12,
-                runSpacing: 12,
+              // 🚨 LINE 1: Cascading Floods & Port Strike Logistics aamne-saamne ek line mein
+              Row(
                 children: [
-                  _buildScenarioChip(
-                    'Cascading Floods',
-                    "Heavy Rain & Flooding paralyzing fleet transit. Karachi Central warehouse reporting stock failures.",
+                  Expanded(
+                    child: _buildScenarioChip(
+                      'Cascading Floods',
+                      "Heavy Rain & Flooding paralyzing fleet transit. Karachi Central warehouse reporting stock failures.",
+                    ),
                   ),
-                  _buildScenarioChip(
-                    'Port Strike Logistics',
-                    "Major container clearance strike. Southern region logistics blocked.",
+                  const SizedBox(width: 12), // Dono chips ke darmayan ka horizontal gap
+                  Expanded(
+                    child: _buildScenarioChip(
+                      'Port Strike Logistics',
+                      "Major container clearance strike. Southern region logistics blocked.",
+                    ),
                   ),
-                  _buildScenarioChip(
-                    'Fuel Margin Strain',
-                    "Macro price index surge of 18% forcing variable expense spikes.",
+                ],
+              ),
+              
+              const SizedBox(height: 12), // Dono lines ke darmayan ka vertical gap
+
+              // 🚨 LINE 2: Fuel Margin Strain & Failure Recovery Loop aamne-saamne ek line mein
+              Row(
+                children: [
+                  Expanded(
+                    child: _buildScenarioChip(
+                      'Fuel Margin Strain',
+                      "Macro price index surge of 18% forcing variable expense spikes.",
+                    ),
                   ),
-                  // Added 4th scenario shortcut for testing the failure model live
-                  _buildScenarioChip(
-                    'Failure Recovery Loop',
-                    "Triggering coordinate transmission anomaly. Tracking failure isolation parameters, active monitoring logs, and final automated state rollback execution.",
+                  const SizedBox(width: 12), // Dono chips ke darmayan ka horizontal gap
+                  Expanded(
+                    child: _buildScenarioChip(
+                      'Failure Recovery Loop',
+                      "Triggering coordinate transmission anomaly. Tracking failure isolation parameters, active monitoring logs, and final automated state rollback execution.",
+                    ),
                   ),
                 ],
               ),
