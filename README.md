@@ -334,7 +334,7 @@ Immutable trace ledger ensuring transparency, auditability, and full workflow ac
 ## 👥 Team Members
 *   **Toheed Ahmed** - Lead Architect: Workflows & Core Agent Development
 *   **Muhammad Hasnain** - Failure Recovery & Rollback Engineer
-*   **Dua Ali** - Lead UI/UX Engineer & Deployment Operations
+*   **Dua Ali** - Lead product designer & Deployment Operations
 *   **Abdul Ahad** - Data Strategy & Mock Data
 *   **Yasir Hafeez** - Constraint & Decision Logic Engineer
 
