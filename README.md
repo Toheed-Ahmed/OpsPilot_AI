@@ -1,14 +1,157 @@
 # OpsPilot AI - Enterprise Autonomous Multi-Agent Logistics Intelligence System
 
+> **An autonomous multi-agent logistics control tower enabling real-time decision intelligence with simulation-driven execution, risk-aware validation, and rollback-safe operations.**
 
-## System Overview
-OpsPilot AI is a production-ready, multi-agent logistics intelligence system designed to ingest unstructured data, assess real-world business impacts, and autonomously simulate execution steps (like routing updates or pricing changes). It acts as an **Agentic Decision-Making and Risk-Aware Control System**, specifically engineered to handle the complexities of supply chain disruptions without blind automation.
+##  Live Deployment & Access
+- 🌐 **Live Web App:** [https://opspilot-ai.netlify.app/](https://opspilot-ai.netlify.app/)
+- 📱 **Android APK Download:** Located in the `app_build/` directory (usable demo build included).
 
-This system is powered by Google Antigravity Multi-Agent Orchestration Engine, enabling:
-- distributed agent reasoning
-- structured JSON communication flow
-- autonomous logistics decision simulation
-- real-world operational modeling
+## ⚙️ System Design Overview
+
+OpsPilot AI is an advanced, multi-agent logistics intelligence system designed to ingest unstructured data, assess real-world business impacts, and simulate execution steps (like routing updates or pricing changes). It acts as an **Agentic Decision-Making and Risk-Aware Control System**, specifically engineered to handle the complexities of supply chain disruptions without blind automation.
+
+Rather than relying on a monolithic AI model, it distributes complex supply chain decision-making across a 14-stage multi-agent pipeline. This guarantees high precision, logical separation of concerns, and completely traceable logic when dealing with critical enterprise constraints.
+
+**Control-Tower Architecture:**
+The system uses the Google Antigravity Multi-Agent Orchestration Engine to sequentially spin up agent personas. Each agent strictly receives and outputs JSON, creating an unbreakable chain of structured data. The architecture allows for dynamic branching, hybrid execution (Active vs. Shadow mode), and autonomous SLA enforcement without human intervention unless specifically escalated.
+
+**Key Enhancements:**
+- Fully semantic multi-source reasoning engine
+- 14-Agent autonomous orchestration workflow
+- Real-time dynamic crisis detection (pre + post execution)
+- Conflict Detection for cross-source contradiction analysis
+- Constraint-Aware Decision Intelligence
+- Dynamic rollback and recovery framework
+- Strict JSON state contracts across all agents
+- End-to-end execution trace logging (`execution_trace.json`)
+- Shadow vs Active Mode execution validation
+- Sustainability & Carbon Footprint Intelligence metrics
+
+### ⚙️ Google Antigravity Orchestration Layer
+
+This system uses Google Antigravity as the central nervous system for all agent coordination and execution lifecycle management.
+
+- Multi-agent orchestration engine for sequential execution
+- Prompt chaining across agents with structured JSON contracts
+- Context propagation between agents without loss of state
+- Execution synchronization across Shadow and Active modes
+- Workflow state transitions (Ingestion → Decision → Execution → Monitoring)
+- Trace generation into execution_trace.json
+- Dynamic rollback orchestration and failure recovery
+- Simulation coordination for Shadow mode sandbox execution
+
+## 📈 Real-World Business Impact
+
+Global supply chain systems suffer billions in annual losses due to delayed decision-making, fragmented telemetry, and reactive logistics operations. OpsPilot AI addresses this by converting real-time operational chaos into structured, agent-driven decision intelligence with predictive simulation and rollback-safe execution.
+
+OpsPilot AI directly addresses the fragility of modern supply chains by replacing reactive, manual firefighting with predictive decision intelligence:
+
+- 📉 **Cost Reduction:** Eliminates costly misroutings and reduces manual overhead.
+- ⏱️ **SLA Improvement:** Autonomously resolves multi-source data conflicts to prevent delivery breaches.
+- 🛡️ **Risk Reduction:** Simulation-first architecture safely models decisions before production impact.
+- ⚡ **Operational Efficiency:** Drives down fuel costs and enhances overall enterprise resilience.
+
+### Architecture Flow
+```mermaid
+graph TD;
+    %% Core Ingestion & Analysis
+    Input[📥 Multi-Source Input JSON] --> Ingestion[Ingestion Agent];
+    Ingestion --> Conflict[Conflict Detection];
+    Conflict --> Insight[Insight Agent];
+    Insight --> Impact[Impact Agent];
+    Impact --> Constraint[Constraint Agent];
+    
+    %% Decision & Validation
+    Constraint --> Validation[Validation Agent];
+    Validation --> Decision{Decision Agent};
+    
+    %% Shadow vs Active Execution
+    Decision -- Low Confidence --> Shadow[🛡️ Shadow Mode Sandbox];
+    Decision -- High Confidence --> Active[⚡ Active Mode Execution];
+    
+    Shadow --> SimExec[Simulation Execution];
+    Active --> ProdExec[Production Execution];
+    
+    %% Monitoring & Feedback
+    SimExec --> Monitoring[Monitoring Agent];
+    ProdExec --> Monitoring;
+    
+    Monitoring -- Instability Detected --> Rollback[⏪ Rollback Agent];
+    Monitoring -- Safe State --> Visualization[Visualization Agent];
+    Rollback -.->|Feedback Loop| Decision;
+    
+    %% Persistence
+    Visualization --> Ledger[(💾 Immutable Trace Ledger)];
+    Rollback --> Ledger;
+```
+
+## ⚡ Quick Start Demo Flow
+
+**📥 1. Input Example:** 
+`weather_alert.json` reporting heavy rain intersecting with a delayed `fleet.json` manifest.
+
+**🧠 2. System Processing:**
+`Conflict Detection` (verifies weather data against fleet logs) ➔ `Impact Agent` (calculates SLA delay penalty) ➔ `Decision Agent` (proposes alternative route).
+
+**📤 3. System Output Example:**
+- 🛡️ **Shadow Mode:** The route is safely simulated without production impact.
+- ⚡ **Active Execution:** If validated, the fleet API is updated autonomously.
+- ⏪ **Rollback State:** If the update fails, the system reverts to the original safe state and escalates to a human.
+
+### 📤 Real Execution Snapshots (Before / After System State)
+
+**Example 1: Fleet Rerouting Execution**
+```json
+{
+  "decision": "Reroute Fleet FLT-09",
+  "previous_route": "Karachi Port",
+  "new_route": "Port Qasim",
+  "sla_risk_reduction": "42%",
+  "fuel_impact": "-12%",
+  "execution_mode": "ACTIVE",
+  "trigger_agent": "Decision Agent",
+  "rollback_required": false
+}
+```
+
+**Example 2: Shadow Mode Simulation Output**
+```json
+{
+  "mode": "SHADOW",
+  "simulation_result": "SUCCESS",
+  "risk_score_before": 0.78,
+  "risk_score_after": 0.31,
+  "recommended_action": "Approve Route B",
+  "system_mutation": false
+}
+```
+
+**Example 3: Alert → Action Chain Trace**
+```json
+{
+  "alert": "Heavy rainfall detected in Karachi corridor",
+  "impact": "SLA delay probability increased",
+  "decision": "Switch to alternative logistics corridor",
+  "execution_status": "completed",
+  "rollback_triggered": false
+}
+```
+
+## 🛠️ Tech Stack
+
+- **Backend:** Python
+- **Orchestration:** Google Antigravity
+- **Data:** JSON Contracts, SQLite
+- **Visualization:** Plotly
+- **Simulation:** Mock APIs
+- **UI:** Flutter / Dashboard
+- Python-based multi-agent orchestration runtime powered by Antigravity
+- JSON state-contract communication architecture across agents
+- Semantic reasoning pipeline using embedding-based inference
+- Plotly-driven operational intelligence dashboards
+- Federated multi-region synchronization framework
+- Append-only execution trace ledger (execution_trace.json)
+- Shadow vs Active dual execution simulation engine
 
 ## Why a Multi-Agent System (Instead of a Single LLM)?
 Using a single LLM for complex operations is prone to hallucinations, blending context, and erratic actions. OpsPilot AI utilizes a multi-agent architecture to enforce:
@@ -19,78 +162,30 @@ Using a single LLM for complex operations is prone to hallucinations, blending c
 ## Architecture & Communication Protocols
 
 - **Strict JSON Passing:** Agents communicate exclusively via structured JSON objects. The output of one agent becomes the *exact* input for the next agent. This ensures a clean, unbreakable chain of thought and eliminates plain text drift.
-
 - **Antigravity Orchestration:** The Antigravity framework operates as the central nervous system, sequentially spinning up specialized prompts, passing the JSON state context, and enforcing the pipeline order.
-
 - **Failure Handling & Fallback Logic:** The Validation Agent monitors the pipeline for ambiguity or low confidence. If `confidence < medium` or `fallback_required: true`, the Decision Agent bypasses automated system changes and safely defaults to human escalation.
+- **Real-World Simulation:** The Simulation Agent prevents direct production harm by outputting mock API calls and expected systemic deltas.
 
-- **Real-World Simulation:** The Simulation Agent prevents direct production harm by outputting mock API calls (e.g., `POST /api/routing/geofence`) and expected systemic deltas. This proves the logic works in a controlled, hackathon-ready sandbox.
+## 🤖 Agents Developed
 
+| Agent | Role | Input | Output |
+|---|---|---|---|
+| **Ingestion Agent** | Normalizes and structures concurrent data streams. | Raw Multi-Source Data | Structured JSON Event |
+| **Conflict Detection** | Resolves cross-source contradictions. | Structured Events | Verified Truth State |
+| **Alert Agent** | Detects cascading supply chain risks. | Verified Truth | Risk Alerts |
+| **Insight Agent** | Extract core operational intelligence. | Risk Alerts | Semantic Insights |
+| **Impact Agent** | Projects financial and operational SLA bleed rates. | Semantic Insights | Impact Models |
+| **Constraint Agent** | Applies real-world resource restrictions. | Impact Models | Resource-Bound Logic |
+| **Validation Agent** | Audits execution safety and legal compliance. | Resource-Bound Logic | Validated Execution JSON |
+| **Decision Agent** | Selects optimal mitigation strategy via debate. | Validated Logic | Selected Arbitration Strategy |
+| **Recommendation** | Builds actionable parallel execution blueprints. | Strategy | Execution-ready deployment plan |
+| **Execution Agent** | Fires ACTIVE/SHADOW parallel API payloads. | Deployment Plan | Live / Mock API Responses |
+| **Monitoring Agent** | Polls post-execution system telemetry. | API Responses | Real-time System Health |
+| **Rollback Agent** | Reverts unstable system states if necessary. | System Health | Rollback-safe system snapshot |
+| **Visualization Agent** | Renders Dashboard & Sustainability Metrics. | Final State | UI Rendering Metrics |
+| **Data Persistence** | Appends secure JSON execution trace. | All Data | Immutable `execution_trace.json` |
 
-## Overall Design of the Solution
-OpsPilot AI is an enterprise-grade autonomous logistics intelligence system. Rather than relying on a monolithic AI model, it distributes complex supply chain decision-making across a 15-stage multi-agent pipeline. This guarantees high precision, logical separation of concerns, and completely traceable logic when dealing with critical enterprise constraints.
-
-## Brief Overview of Architecture
-The system is built on a Control-Tower style architecture. It uses the Google Antigravity Multi-Agent Orchestration Engine to sequentially spin up agent personas. Each agent strictly receives and outputs JSON, creating an unbreakable chain of structured data. The architecture allows for dynamic branching, hybrid execution (Active vs. Shadow mode), and autonomous SLA enforcement without human intervention unless specifically escalated.
-
-## Mock / Real APIs Used
-- **Mock Operational APIs:** Fleet Navigation API, Billing API, WMS Engine, Customer Service Portal.
-- **Data Ingestion Sources (Mocked JSON):** Weather alerts, fleet telemetry, warehouse status, customer complaints.
-- **Google Antigravity:** Multi-Agent Orchestration Engine.
-
-## Agents Developed
-We have developed 14 highly specialized AI Agents, including:
-- *Ingestion & Conflict Detection Agents:* To normalize and verify multi-source data.
-- *Insight, Impact, & Constraint Agents:* For semantic reasoning and financial/SLA impact modeling.
-- *Validation, Decision, & Recommendation Agents:* To enforce logic and build execution blueprints (e.g., using Dialectical Debates).
-- *Execution, Monitoring, Alert, & Rollback Agents:* To fire parallel API payloads, forecast SLA drift, and automatically revert corrupted operations.
-- *Visualization Agent:* Driving the Split-Screen Time Travel Control Tower and Carbon-Arbitrage metrics.
-
-## Integration Implemented
-- End-to-end JSON execution trace logging (`execution_trace.json`) that records every agent's decision, terminal logs, and system deltas.
-- Real-time Alert & Action Intelligence System integration.
-- Ready for Flutter UI integration via the Time Travel Control Tower dashboard outputs.
-
-## 🧠 Key Enhancements 
-
-- Fully semantic multi-source reasoning engine (no hardcoded keyword logic)
-- Enterprise-grade 14-Agent autonomous orchestration workflow
-- Real-time Alert Agent for dynamic crisis detection (pre + post execution)
-- Action-Oriented Intelligence layer for execution tracking and operational state awareness
-- Conflict Detection Agent for cross-source contradiction analysis
-- Constraint-Aware Decision Intelligence using real-world logistics limitations
-- Autonomous multi-strategy decision engine with risk-aware reasoning
-- Parallel execution engine supporting 3–5 simultaneous logistics operations
-- Dynamic rollback and recovery framework for unsafe or failed executions
-- Monitoring Agent with continuous telemetry validation and instability detection
-- Strict JSON state contracts across all agents for full traceability
-- End-to-end execution trace logging inside `execution_trace.json`
-- Live Terminal Command streaming for every agent stage
-- Shadow vs Active Mode execution validation system
-- Sustainability & Carbon Footprint Intelligence metrics
-- Before vs After operational visualization engine
-- Cross-region supply chain propagation analysis
-- Financial, operational, trade, and infrastructure impact modeling
-- Multi-source ingestion support:
-  - fleet logs
-  - weather alerts
-  - warehouse reports
-  - customer complaints
-  - market/news intelligence
-  - operational constraints
-  - rollback/failure scenarios
-- Advanced failure handling and automated rollback protection
-- Human escalation fallback pathway for low-confidence execution
-- Google Antigravity orchestration integration with synchronized workflow execution
-- Real-time logistics intelligence dashboard compatibility (Flutter UI ready)
-- Enterprise control-tower style architecture for supply chain operations
-- Adaptive execution modes:
-  - SHADOW mode (safe simulation)
-  - ACTIVE mode (live operational execution)
-- Mock operational APIs and autonomous routing simulation
-- Production-style logistics anomaly detection and mitigation system
-
-## 🚀 Next-Generation Intelligence Features (v2.0) (Latest Version)
+## 🚀 Next-Generation Intelligence Features (v2.0)
 - **Causal Root-Cause & Memory Graph Engine**: Deep extraction and mapping of operational disruption root causes using semantic embeddings.
 - **Self-Healing Digital Twin Sandbox**: Simulation delta modeling allowing Shadow vs Active mode testing before production deployment.
 - **Autonomous SLA Enforcement Escrow**: Dynamic vendor risk calculation, SLA breach escrow penalties, and automated carrier downgrades.
@@ -98,60 +193,21 @@ We have developed 14 highly specialized AI Agents, including:
 - **Multi-Tier Self-Healing Sandbox**: Fallback-ready, tiered execution layers for continuous operation despite API anomalies.
 - **Proactive Sliding-Window SLA Drift Forecaster**: Velocity-based SLA breach prediction and continuous confidence modeling.
 - **Asynchronous Carbon-Arbitrage Control Tower**: Post-execution optimization tracking for eco-scores and fuel efficiency gains.
-- **Split-Screen Time Travel Control Tower**: Unprecedented timeline-based UI tracking state deltas (Before vs After) perfect for high-fidelity dashboards.
+- **Split-Screen Time Travel Control Tower**: Timeline-based UI tracking state deltas (Before vs After) perfect for high-fidelity dashboards.
 - **Multi-Region Federated Intelligence Sync**: Synchronization and conflict resolution across multiple geographic nodes (e.g., Karachi, Hyderabad, Gwadar).
 
-## Full Agent Workflow
-```text
-5+ Multi-Source Inputs
-↓
-Ingestion Agent
-↓
-Conflict Detection Agent
-↓
-Insight Agent
-↓
-Impact Agent
-↓
-Alert Agent
-↓
-Action Intelligence Agent
-↓
-Constraint Agent
-↓
-Validation Agent
-↓
-Decision Agent
-↓
-Recommendation Agent
-↓
-Execution Agent (3–5 parallel actions)
-↓
-Monitoring Agent
-↓
-Rollback Agent
-↓
-Visualization Agent
-```
+## 🎬 Demo / Use Case Flow
 
+**How the system executes step-by-step:**
+When an operational anomaly occurs, the system ingests the data, resolves conflicts, and models the business impact. The agents debate the best course of action and create an execution blueprint.
 
-## 🔄 OpsPilot AI — 15-Stage System Workflow Pipeline
+**Shadow vs Active Mode Behavior:**
+- **SHADOW Mode:** The system tests the proposed solution against Mock APIs to observe outcomes without affecting live data.
+- **ACTIVE Mode:** Once validated, the system deploys the change to the live environment.
 
-1. **5+ Multi-Source Inputs** (News, Weather, Fleet, Warehouse, Complaints)
-2. **Ingestion Agent** (Normalizes and structures concurrent data streams)
-3. **Conflict Detection Agent** (Resolves cross-source contradictions)
-4. **Alert Agent** (Detects cascading supply chain risks)
-5. **Insight Agent** (Extracts core operational intelligence)
-6. **Impact Agent** (Projects financial and operational SLA bleed rates)
-7. **Constraint Agent** (Applies real-world resource restrictions)
-8. **Validation Agent** (Audits execution safety and legal compliance)
-9. **Decision Agent** (Selects optimal mitigation strategy)
-10. **Recommendation Agent** (Builds actionable parallel execution blueprints)
-11. **Execution Agent** (Fires ACTIVE/SHADOW parallel API payloads)
-12. **Monitoring Agent** (Polls post-execution system telemetry)
-13. **Rollback Agent** (Reverts unstable system states if necessary)
-14. **Visualization Agent** (Renders Dashboard & Sustainability Metrics)
-15. **Data Persistence Module** (Appends secure JSON execution trace)
+**What a full run looks like:**
+A full run takes the initial alert, pushes it through the 14-agent matrix, applies constraints, safely executes the fix, logs everything to an append-only JSON ledger, and updates the time-travel UI to show the "before and after" states.
+
 
 ---
 
@@ -204,6 +260,23 @@ Visualization Agent
 - Action Agent executes and tracks multi-step operational changes
 - Ensures full traceability of decisions inside execution logs
 
+### 🧠 Live Multi-Agent Reasoning Trace
+
+**Alert Agent:**
+"Heavy rain detected near Karachi corridor."
+
+**Impact Agent:**
+"Estimated SLA breach probability: 78%"
+
+**Decision Agent:**
+"Switching to Route B due to lower operational risk."
+
+**Validation Agent:**
+"Route approved under constraint thresholds."
+
+**Rollback Agent:**
+"No rollback required. System stable."
+
 ## 📦 Execution Trace System
 All workflow executions are stored in:
 `mockdata/execution_trace.json`
@@ -213,13 +286,16 @@ All workflow executions are stored in:
 
 
 ## 📂 Project Structure
-*   `workflows/` — Core Agentic logic and action-execution flows.
-*   `lib/` - main screens.
-*   `assets/` — json files.
-*   `mock_data/` — Unstructured reports and simulated system logs for testing.
-*   `docs/` — Technical documentation and pitch materials.
-*   `agents/` - Agentic logic and action-execution flows.
-*   `screenshots/` - screenshots of the project.
+
+- `workflows/` — Core agentic logic and action-execution pipelines for multi-agent orchestration.
+- `lib/` — Main application screens (UI layer / Flutter interface).
+- `assets/` — Static JSON configurations, datasets, and structured input files.
+- `mock_data/` — Unstructured reports, simulated operational inputs, and system test logs.
+- `agents/` — Core multi-agent logic, decision modules, and reasoning components.
+- `screenshots/` — Visual snapshots of system UI, workflows, and execution states.
+- `app_build/` — Production-ready Android APK build for deployment and demo execution.
+- `antigravity_trace/` — Google Antigravity execution logs, orchestration traces, debugging history, and vibe coding session records.
+- `scripts/` — Python backend utilities, simulation engines, and supporting execution scripts.
 
 
 ## 📸 Screenshots
@@ -258,7 +334,7 @@ Immutable trace ledger ensuring transparency, auditability, and full workflow ac
 ## 👥 Team Members
 *   **Toheed Ahmed** — Lead Architect: Workflows & Core Agent Development
 *   **Muhammad Hasnain** — Failure Recovery & Rollback Engineer
-*   **Dua Ali** — Mobile Development & UI/UX
+*   **Dua Ali** — Lead UI/UX Engineer & Deployment Operations
 *   **Abdul Ahad** — Data Strategy & Mock Data
 *   **Yasir Hafeez** — Constraint & Decision Logic Engineer
 
