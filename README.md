@@ -222,59 +222,38 @@ All workflow executions are stored in:
 *   `screenshots/` - screenshots of the project.
 
 
-## 🕹️ System Execution & Interface Journey
+## 📸 Screenshots
 
-Follow this quick step-by-step sequence to see how **OpsPilot AI** processes a logistics crisis from start to finish.
+A visual walkthrough of the autonomous reasoning workflow, simulation tracking, recovery mechanisms, and agent coordination system.
 
-### 📋 Phase 1: Ingestion & Initialization
+| Autonomous Engine | Shadow Mode |
+|---|---|
+| Core orchestration and execution engine managing autonomous workflows. | Parallel monitoring and fallback execution environment. |
+| ![](screenshots/Autonomous_engine.jpeg) | ![](screenshots/Shadow_mode.jpeg) |
 
-#### 1. Telemetry Ingestion
-![Telemetry Ingestion](screenshots/Autonomous_engine.jpeg)
-* The control tower dashboard ingests multi-source real-world data streams, including fleet logs, weather alerts, and warehouse files.
+| Initializing Pipeline | Reasoning |
+|---|---|
+| Pipeline bootstrapping and task initialization process. | Multi step agent reasoning and decision making flow. |
+| ![](screenshots/Initializing_pipeline.jpeg) | ![](screenshots/Reasoning.jpeg) |
 
-#### 1.1. Shadow mode
-![Telemetry Ingestion](screenshots/Shadow_mode.jpeg)
-* The control tower dashboard ingests multi-source real-world data streams, including fleet logs, weather alerts, and warehouse files.
+| Control Alert | Simulation Tracker |
+|---|---|
+| Real time alerts and system intervention monitoring. | Tracking simulations, workflow states, and execution logs. |
+| ![](screenshots/Control_alert.jpeg) | ![](screenshots/Simulation_Tracker.jpeg) |
+
+| State Recovery | Debate |
+|---|---|
+| Automatic recovery handling and fault restoration process. | Agent debate and consensus driven reasoning interface. |
+| ![](screenshots/State_recovery.jpeg) | ![](screenshots/Debate.jpeg) |
+
+### 📒 Ledger
+Immutable trace ledger ensuring transparency, auditability, and full workflow accountability across the system.
+
+<p align="center">
+  <img src="screenshots/Ledger.jpeg" width="300"/>
+</p>
 
 
-
-#### 2. Pipeline Activation
-![Pipeline Activation](screenshots/Initializing_pipeline.jpeg)
-* The system boots up the core orchestrator runtime and activates the synchronized 14-Agent autonomous workflow.
-
----
-
-### 🧠 Phase 2: Analysis & Debate
-
-#### 3. Causal Graph & Memory Matching
-![Causal Analysis](screenshots/Reasoning.jpeg)
-* The **Causal Root-Cause Engine** scans historical memory graphs using text embeddings to identify the true origin of an operational delay.
-
-#### 4. Multi-Agent Dialectical Debate
-![Adversarial Debate](screenshots/Debate.jpeg)
-* The *Optimist Agent* and *Pessimist Agent* run a live cross-examination loop to weigh alternative strategies against risk velocity vectors.
-
-#### 5. Cryptographic Ledger Locking
-![Ledger Serialization](screenshots/Ledger.jpeg)
-* The *Decision Agent* arbitrates the debate, selects the optimal strategy, and locks the final execution path down with a secure SHA-256 cryptographic signature.
-
----
-
-### 📊 Phase 3: Navigation & Operational Results
-
-#### 6. Terminal Interface Redirection
-![Ledger Workspace Navigation](screenshots/Simulation_Tracker.jpeg)
-* The UI navigates the operator to the master ledger screen, exposing live streaming agent logs for end-to-end traceability.
-
-#### 7. Split-Screen Time-Travel Mapping
-![Before vs After Results](screenshots/Control_alert.jpeg)
-* The **Split-Screen Time-Travel View** maps out the live contrast: the unmitigated disaster path on the left versus the AI-optimized safe route on the right.
-
-#### 8. Regional Federated Convergence
-![Dashboard Summary Metrics](screenshots/Results2.jpeg)
-* The final dashboard displays live SLA countdown timers, regional carbon compliance metrics, and cross-city federated status alerts.
-
----
 
 ## 👥 Team Members
 *   **Toheed Ahmed** — Lead Architect: Workflows & Core Agent Development
