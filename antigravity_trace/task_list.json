@@ -1,0 +1,184 @@
+[
+  {
+    "task_id": "TSK-100",
+    "title": "Define Core Additive-Only State Contract Schemas",
+    "assignee": "Toheed Ahmed",
+    "status": "COMPLETED",
+    "description": "Establish the base JSON schema for inter-agent communication and state preservation."
+  },
+  {
+    "task_id": "TSK-101",
+    "title": "Build 14-Agent Synchronized Execution Matrix",
+    "assignee": "Toheed Ahmed",
+    "status": "COMPLETED",
+    "description": "Develop the custom orchestrator to route unstructured logistics data sequentially across 14 specialized agents."
+  },
+  {
+    "task_id": "TSK-102",
+    "title": "Implement Causal Root-Cause Engine",
+    "assignee": "Toheed Ahmed",
+    "status": "COMPLETED",
+    "description": "Integrate text-embedding-004 to map operational anomalies into semantic memory graphs and DAGs."
+  },
+  {
+    "task_id": "TSK-103",
+    "title": "Develop Dialectical Debate Ledger",
+    "assignee": "Toheed Ahmed",
+    "status": "COMPLETED",
+    "description": "Engineer the Optimist vs. Pessimist adversarial logic and lock rulings via SHA-256 hashing."
+  },
+  {
+    "task_id": "TSK-200",
+    "title": "Design Interactive Split-Screen Time-Travel Slider",
+    "assignee": "Dua",
+    "status": "COMPLETED",
+    "description": "Build UI components to track discrete indices ('before_state', 'after_state', 'diff_map')."
+  },
+  {
+    "task_id": "TSK-201",
+    "title": "Dashboard Animations and UX Refinement",
+    "assignee": "Dua",
+    "status": "COMPLETED",
+    "description": "Enhance front-end visualization for agent interactions and system deltas."
+  },
+  {
+    "task_id": "TSK-300",
+    "title": "Validate Regional Node Synchronization",
+    "assignee": "Hasnain",
+    "status": "COMPLETED",
+    "description": "Configure federated intelligence sync across Karachi, Lahore, and Islamabad."
+  },
+  {
+    "task_id": "TSK-301",
+    "title": "Infrastructure Setup and Deployment Pipeline",
+    "assignee": "Hasnain",
+    "status": "COMPLETED",
+    "description": "Setup GitHub Actions and server environments for multi-node logistics tracking."
+  },
+  {
+    "task_id": "TSK-400",
+    "title": "Fix Git State Wipe Incident",
+    "assignee": "Toheed Ahmed",
+    "status": "COMPLETED",
+    "description": "Recover lost files from 'git reset --hard' using 'git reflog' and restore to 'feat/antigravity-core'."
+  },
+  {
+    "task_id": "TSK-401",
+    "title": "Resolve Python 3.12 Deprecation Server Hang",
+    "assignee": "Toheed Ahmed",
+    "status": "COMPLETED",
+    "description": "Replace datetime.utcnow() with timezone-aware logic at line 122 of update_system.py to fix GitHub Actions."
+  },
+  {
+    "task_id": "TSK-500",
+    "title": "Finalize Production State Contract (OP-SYNC-9006)",
+    "assignee": "Toheed Ahmed",
+    "status": "COMPLETED",
+    "description": "Lock the execution trace and ensure all federated and UI schemas match."
+  },
+  {
+    "task_id": "TSK-600",
+    "title": "Implement Real-Time Alert Agent",
+    "assignee": "Toheed Ahmed",
+    "status": "COMPLETED",
+    "description": "Built semantic crisis detection engine with dynamic risk propagation analysis."
+  },
+  {
+    "task_id": "TSK-601",
+    "title": "Design Rollback Framework",
+    "assignee": "Hasnain",
+    "status": "COMPLETED",
+    "description": "Engineered automated rollback protocols for safe fallback logic during corrupted operations."
+  },
+  {
+    "task_id": "TSK-602",
+    "title": "Failure Recovery Sequences",
+    "assignee": "Toheed Ahmed",
+    "status": "COMPLETED",
+    "description": "Developed degraded execution handling and human escalation pathways for critical failures."
+  },
+  {
+    "task_id": "TSK-603",
+    "title": "Build Simulation Sandbox",
+    "assignee": "Toheed Ahmed",
+    "status": "COMPLETED",
+    "description": "Constructed digital twin environment for consequence-free shadow mode testing."
+  },
+  {
+    "task_id": "TSK-604",
+    "title": "Integrate Carbon Metrics",
+    "assignee": "Toheed Ahmed",
+    "status": "COMPLETED",
+    "description": "Added asynchronous optimization loops for carbon optimization and eco-routing intelligence."
+  },
+  {
+    "task_id": "TSK-605",
+    "title": "Federated Sync Orchestration",
+    "assignee": "Hasnain",
+    "status": "COMPLETED",
+    "description": "Implemented multi-region synchronization protocols across Karachi, Hyderabad, and Gwadar."
+  },
+  {
+    "task_id": "TSK-606",
+    "title": "Debate Ledger Implementation",
+    "assignee": "Toheed Ahmed",
+    "status": "COMPLETED",
+    "description": "Built multi-agent adversarial reasoning engine (Optimist vs Pessimist)."
+  },
+  {
+    "task_id": "TSK-607",
+    "title": "Time Travel UI Expansion",
+    "assignee": "Dua",
+    "status": "COMPLETED",
+    "description": "Developed split-screen rendering to track discrete before vs after indices."
+  },
+  {
+    "task_id": "TSK-608",
+    "title": "SLA Forecasting Logic",
+    "assignee": "Toheed Ahmed",
+    "status": "COMPLETED",
+    "description": "Engineered proactive sliding-window SLA breach prediction and confidence curves."
+  },
+  {
+    "task_id": "TSK-609",
+    "title": "Causal Memory Graph Enhancements",
+    "assignee": "Toheed Ahmed",
+    "status": "COMPLETED",
+    "description": "Enhanced text-embedding-004 logic for mapping operational disruptions."
+  },
+  {
+    "task_id": "TSK-610",
+    "title": "Shadow vs Active Routing",
+    "assignee": "Toheed Ahmed",
+    "status": "COMPLETED",
+    "description": "Segmented pipeline logic to allow simulation delta modeling prior to production mutation."
+  },
+  {
+    "task_id": "TSK-611",
+    "title": "Cryptographic Ledger Integration",
+    "assignee": "Toheed Ahmed",
+    "status": "COMPLETED",
+    "description": "Implemented SHA-256 state locking for immutable audit trails of debate rulings."
+  },
+  {
+    "task_id": "TSK-612",
+    "title": "Execution Trace Validation",
+    "assignee": "Hasnain",
+    "status": "COMPLETED",
+    "description": "Verified append-only architecture guarantees for replayable history and rollback checkpoints."
+  },
+  {
+    "task_id": "TSK-613",
+    "title": "Monitoring Agent Finalization",
+    "assignee": "Toheed Ahmed",
+    "status": "COMPLETED",
+    "description": "Stabilized telemetry validation and continuous instability detection."
+  },
+  {
+    "task_id": "TSK-614",
+    "title": "Constraint Engine Updates",
+    "assignee": "Toheed Ahmed",
+    "status": "COMPLETED",
+    "description": "Added dynamic vendor risk calculation and SLA breach escrow penalties."
+  }
+]
